@@ -1,0 +1,99 @@
+//contoh pembuatan variabel global di tandai simbol $nama_variabel
+$bg-primary : #e0d7d7;
+$fontkonten : 'Arial';
+$fonttitle : 18px;
+$jarakmin: 10px;
+//contoh sebuah variabel menampung beberapa value
+$font_color : (
+    'danger' : red,
+    'success' : green,
+    'info' : blue,
+);
+//contoh pembuatan mixin, seperti fungsi, parameter boleh > 1
+@mixin columnx($posisi) {
+    display: flex;
+    flex-direction: $posisi;
+}
+
+@mixin paddingmin($nilai, $font){
+    padding: $nilai;
+    color: blue;
+    font-size: $font;
+}
+//contoh fitu mixin dengan conditional value
+@mixin profile($size, $circle:false){
+    width: $size;
+    height: $size;
+    border: dotted springgreen 2px;
+    border-radius: 5px;
+    //contoh sederhana fitur flow control
+    @if $circle{
+        border-radius: 50%;
+    }    
+    
+}
+.border{
+    border: solid 2px springgreen;
+}
+
+body{    
+    background-color: $bg_primary; //contoh cara panggil fitur variabel global
+    font-size: 12px;
+    h1{
+        //contoh cara panggil fitur variabel map
+        color: map-get($font_color, 'info'); 
+        text-align: center;
+    }
+}
+.container{
+    //contoh penggunaan fitur operator
+    margin-left: $jarakmin * 5;
+    margin-right: $jarakmin * 5;
+
+    ul, li{
+        //contoh panggil fitur mixin dengan parameter
+        @include columnx('column');
+        @include paddingmin(10px, 18px);
+    }
+}
+.main{
+    //contoh fitur nesting
+    &-header, &-footer{   
+        //simbol & menunjukkan bagian dari parent selector, yaitu main      
+        font-size: $fonttitle;
+        ul{
+            background-color: burlywood;
+        }
+        li{
+            border-left: solid 1px #b8882f;
+            padding-left: 10px;
+            background-color:#f7bb4d;
+        }
+        li:hover{
+            background: #f3e77b;
+            color : map-get($font_color, "success");
+        }
+    }
+
+    &-content{
+        @include columnx('row');
+        @include paddingmin(5px, 14px);
+        //contoh fitur extend, memanggil selector lain
+        @extend .border;
+        .content{
+             background-color: burlywood;
+             margin-left: 10px;
+             @include paddingmin(10px, 14px);
+             font-family: Verdana, Geneva, Tahoma, sans-serif;
+             color: whitesmoke;
+        }
+        
+        img{
+            @include profile(100,false);
+            &:hover{
+                @include profile(100,true);
+            }
+        }
+    }
+}
+
