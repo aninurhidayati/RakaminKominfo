@@ -87,7 +87,7 @@ body{
              font-family: Verdana, Geneva, Tahoma, sans-serif;
              color: whitesmoke;
         }
-        
+        //contoh pembuatan mixin dengan flow control di dalamnya
         img{
             @include profile(100,false);
             &:hover{
