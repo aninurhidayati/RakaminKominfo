@@ -1,3 +1,4 @@
+
 untuk meng-compile file sass melalui terminal :
 1) ketik: npm init
    perintah membuat file package.json
@@ -13,3 +14,4 @@ untuk meng-compile file sass melalui terminal :
 
 5) ketik : npm run compile:sass
    untuk perintah compile
+
