@@ -1,0 +1,15 @@
+untuk meng-compile file sass melalui terminal :
+1) ketik: npm init
+   perintah membuat file package.json
+
+2) ketik: npm install node-sass -g
+   perintah untuk menginstal modul sass via node.js
+
+3) buat file dengan extension namafile.scss dan namafile.css di vscode
+
+4) buka file  package.json
+   ganti file  "test" : "echo \"Error: no test specified\" && exit 1"
+   menjadi "compile:sass": "node-sass sass/main.scss css/style.css -w"
+
+5) ketik : npm run compile:sass
+   untuk perintah compile
