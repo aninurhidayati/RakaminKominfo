@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Javascript DOM</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+   </head>
+   <body>
+      <h1 id="demo"></h1>
+
+      <div id="div">
+         <p id="p1">Paragraf kesatu</p>
+         <p id="p2">Paragraf kedua</p>
+         <p id="plast">pargraf akhir</p>
+      </div>
+
+      <hr />
+      <div class="row ms-5">
+         <div class="col-md-3">
+            <form action="#" onsubmit="proses()">
+               <label class="form-label">Masukkan Nama</label>
+               <input type="text" id="txt_nama" class="form-control" />
+
+               <label class="form-label">nilai-1</label>
+               <input type="text" id="nilai1" class="form-control" />
+               <label class="form-label">nilai-2</label>
+               <input type="text" id="nilai2" class="form-control" />
+
+               <button type="button" class="btn btn-primary mt-3" id="btntampil">Tampil</button>
+               <button type="submit" class="btn btn-success mt-3" id="btnsubmit">submit</button>
+            </form>
+         </div>
+         <div class="col-md-5 ps-5">
+            <div id="tampildata" class="bg-warning"></div>
+            <div id="tampilnilai" class="bg-danger"></div>
+         </div>
+      </div>
+
+      <script src="latihan.js"></script>
+      <!-- <script>
+         document.getElementById("demo").innerHTML = "Belajar Javascript DOM";
+      </script> -->
+   </body>
+</html>
